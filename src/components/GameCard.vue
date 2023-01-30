@@ -54,7 +54,7 @@
           </div>
         </div>
         <img
-            v-if="[CARD_CONTENT_TYPE.upload, CARD_CONTENT_TYPE.link].includes(item.type) && item.content"
+            v-if="(item.type === CARD_CONTENT_TYPE.upload || item.type === CARD_CONTENT_TYPE.link) && item.content"
             class="wh-full object-cover"
             :src="item.content"
             alt=""
@@ -66,7 +66,7 @@
         >{{ item.content }}</div>
       </div>
     </div>
-    <div class="h-10 leading-[1.2] whitespace-pre-line" un-flex="center" un-text="center 4"
+    <div class="h-10 leading-[1.2] whitespace-pre-line" un-flex="center" un-text="center 4.5"
          :style="labelFontSize(item.label)">{{ item.label }}
     </div>
   </div>
@@ -84,7 +84,7 @@ const props = defineProps<{
 const uploadBtnRef = ref<HTMLInputElement | null>(null);
 
 const labelFontSize = (text: string) => {
-  if (text.length > 7) {
+  if (text.length > 6) {
     return {
       fontSize: '0.8125rem',
     };

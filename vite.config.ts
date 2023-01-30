@@ -1,7 +1,7 @@
-import vue from "@vitejs/plugin-vue";
-import * as path from "path";
-import unocss from "unocss/vite";
-import { defineConfig } from "vite";
+import vue from '@vitejs/plugin-vue';
+import * as path from 'path';
+import unocss from 'unocss/vite';
+import { defineConfig } from 'vite';
 
 const pathSrc = path.resolve(__dirname, "src");
 
@@ -12,5 +12,6 @@ export default defineConfig({
       "@/": `${pathSrc}/`,
     },
   },
+  base: './',
   plugins: [vue(), unocss()],
 });
