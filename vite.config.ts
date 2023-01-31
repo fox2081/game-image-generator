@@ -13,5 +13,9 @@ export default defineConfig({
     },
   },
   base: './',
+  server: {
+    host: '0.0.0.0',
+    port: 5200,
+  },
   plugins: [vue(), unocss()],
 });

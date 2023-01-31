@@ -9,5 +9,18 @@
   <body>
     <div id="app"></div>
     <script type="module" src="src/main.ts"></script>
+    <script>
+    function setRem() {
+      const width = document.documentElement.clientWidth
+      if (width < 750) {
+        const scale = width / 975;
+        document.documentElement.style.fontSize = scale * 16 + 'px';
+      } else {
+        document.documentElement.style.fontSize = '16px';
+      }
+    }
+    setRem();
+    window.onresize = setRem;
+    </script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 <template>
   <div class="w-full bg-white p-6" un-flex="col" ref="picAreaRef">
-    <h2>游戏生涯个人喜好表</h2>
+    <h2 un-text="12">游戏生涯个人喜好表</h2>
     <div un-flex="shrink-0" un-grid="~ cols-6" class="gap-2">
       <GameCard :item="i" v-for="i in gameList" :key="i.label"></GameCard>
     </div>
